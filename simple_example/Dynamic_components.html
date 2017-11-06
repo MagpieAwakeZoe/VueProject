@@ -1,0 +1,29 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="aaa" @click="a='aaa'">
+    <input type="button" value="bbb" @click="a='bbb'">
+<component :is="a"></component>
+</div>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            a:'aaa'
+        },
+        components:{
+            'aaa':{
+                template:'<h2>我是组件aaa</h2>'
+            },
+            'bbb':{
+                template:'<h2>我是组件bbb</h2>>'
+            }
+        }
+    })
+</script>
+</body>

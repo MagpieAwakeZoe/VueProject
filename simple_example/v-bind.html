@@ -1,0 +1,52 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="vbind" :style="{width:divWidth,height:divHeight,fontSize:divFontSize+'px'}">
+    <table id="vbindTable" :style="{width:divWidth,height:divHeight,fontSize:divFontSize+'px',textAlign:textAlign}">
+        <tr>
+            <th>编号</th>
+            <th>树名</th>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>樟树</td>
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>桦树</td>
+        </tr>
+        <tr>
+            <td>003</td>
+            <td>松树</td>
+        </tr>
+        <tr>
+            <td>004</td>
+            <td>枫树</td>
+        </tr>
+        <tr>
+            <td>005</td>
+            <td>梧桐树</td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    var vue = new Vue({
+        el:"#vbind",
+        data:{
+            divWidth:'100%',
+            divHeight:'100%',
+            divFontSize:14,
+            textAlign:"center"
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    {{message|low('12','5')}}
+    传参vue2.0改成function(括号)，函数的形式
+</div>
+
+
+
+<script>
+    Vue.filter("low", function(value,a,b) {   //全局方法 Vue.filter() 注册一个自定义过滤器,必须放在Vue实例化前面
+        return value.toLowerCase()+a+','+b;
+    });
+
+
+    new Vue({
+        el:"#app",
+        data: {
+            message:"WELCOME"
+        }
+    })
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

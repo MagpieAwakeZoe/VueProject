@@ -1,0 +1,30 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    {{message|low}}
+</div>
+
+
+
+<script>
+    Vue.filter("low", function(value) {   //全局方法 Vue.filter() 注册一个自定义过滤器,必须放在Vue实例化前面
+        return value.toLowerCase();
+    });
+
+
+    new Vue({
+        el:"#app",
+        data: {
+            message:"WELCOME"
+        }
+    })
+
+</script>
+
+</body>

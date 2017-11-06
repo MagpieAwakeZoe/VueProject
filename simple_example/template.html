@@ -1,0 +1,39 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <aaa></aaa>
+</div>
+    <template id="temp1">
+        <ul>
+            <li>{{msg}}</li>
+            <li v-for="value in msg2">
+                {{value}}
+            </li>
+        </ul>
+    </template>
+
+<script>
+    var vue = new Vue({
+        el:'#app',
+        components:{
+            'aaa':{
+                template:'#temp1',
+                data(){
+                    return {
+                        msg:'hello',
+                        msg2:[
+                            'apple','banana','orange'
+                        ]
+                    }
+                }
+            }
+        }
+    })
+
+</script>
+</body>

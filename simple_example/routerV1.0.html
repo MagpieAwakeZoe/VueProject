@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <script src="bower_components/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li><a v-link="{path:'/we'}">我们</a></li>
+        <li><a v-link="{path:'/you'}">你们</a></li>
+    </ul>
+
+    <!--填放跳转后的数据的‘坑’-->
+    <div>
+        <router-view></router-view>
+    </div>
+</div>
+
+
+<script>
+    //根组件
+    var App = Vue.extend();
+    //子组件，you,we.
+    var We = Vue.extend({
+        template:'<h2>我们欢迎你们</h2>'
+    });
+
+    var You = Vue.extend({
+        template:'<h2>你们欢迎我们</h2>'
+    });
+
+    //准备路由
+    var router = new VueRouter();
+
+    router.map({
+        'we':{
+            component:We
+        },
+        'you':{
+            component:You
+        }
+    });
+
+    //启动组件
+    router.start(App,'#app')
+</script>
+</body>
+</html>

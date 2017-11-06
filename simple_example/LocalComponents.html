@@ -1,0 +1,31 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <aaa></aaa>
+</div>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        components:{
+            'aaa':{
+                template:'<h2 @click="change">{{msg}}</h2>',
+                data(){
+                    return {
+                        msg:'welcome'           //这里的data()必须返回的是一个对象形式
+                    }
+                },
+                methods:{
+                     change(){
+                         alert('我是火车王');
+                     }
+                }
+            }
+        }
+    })
+</script>
+</body>

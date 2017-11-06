@@ -1,0 +1,39 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="vue-resource.js"></script>
+</head>
+<body>
+<div id="app">
+    <myaaa></myaaa>
+    <bbb :m="msg"></bbb>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            a:'aaa'
+        },
+       components:{
+            'myaaa':{
+                data(){
+                    return {
+                        msg:'dfd'
+                    };
+                },
+                template:'<h3>我是Aa{{msg}}<bbb></h3>',
+                components:{
+                    'bbb':{
+                        props:['m'],
+                    template:"<h3>我是Bb{{msg}}</h3>"
+                }
+                }
+            }
+       }
+    })
+</script>
+</body>
+</html>

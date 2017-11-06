@@ -1,0 +1,35 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    a=>{{a}}
+    b=>{{b}}
+
+</div>
+<script>
+    var vue = new Vue({
+        el:'#app',
+        data:{
+            a:1,
+        },
+        computed:{
+            b:{
+                get:function () {
+                    return this.a+2;
+                },
+                set:function (val) {
+                    this.a = val;
+                }
+            }
+        },
+    })
+
+    document.onclick =function () {
+        vue.b = 10
+    }
+</script>
+</body>

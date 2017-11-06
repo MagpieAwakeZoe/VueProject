@@ -1,0 +1,36 @@
+new 一个vue对象设置他的属性：
+data,	存放所有数据
+methods, 方法
+watch	监听
+
+data,表示vue对象的数据,methods 代表vue对象方法
+watch,表示设置了对象的监听的方法
+
+
+例子：
+new Vue({
+  data:{
+  a:1,
+  b:[]
+},
+ methods:{
+	doSomething:function(){
+	this.a++
+}
+},
+  watch:{
+	'a':function(val,oldval)
+}
+}
+})
+
+
+
+vue对象里的设置通过html指令进行关联
+
+其中重要的有
+v-html , v-text , {{}} 	渲染数据
+v-if ， v-show	控制显示和隐藏
+v-on(简写成@)	绑定事件
+v-for	循环渲染
+v-bind (简写":")属性绑定

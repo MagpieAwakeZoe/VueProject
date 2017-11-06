@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(people,index) in peoples">
+                {{people.name}}<br>{{people.sex}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vue = new Vue({
+            el:'#app',
+            data(){
+                return{
+                    peoples:[
+                        {name:'john',sex:'male'},
+                        {name:'lucy',sex:'female'},
+                        {name:'bob',sex:'male'},
+                    ]
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

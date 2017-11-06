@@ -1,0 +1,29 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="age">
+    <p><input type="text" v-model="message"/></p>
+    <p><button @click="alert1">Hello</button></p>
+    <p><button @click="say('Hi')">H1</button></p>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#age',
+        data: {
+            message:"Hello,Hi"
+        },
+        methods:{
+            alert1:function () {
+                alert(this.message);
+            },
+            say:function (msg) {
+                alert(msg);
+            }
+        }
+    })
+</script>
+</body>

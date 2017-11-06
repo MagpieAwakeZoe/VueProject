@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+<div id="app">
+    <aaa>
+        <ul slot="slot_ul">
+            <li>123123</li>
+            <li>234234</li>
+            <li>345345</li>
+        </ul>
+
+        <ol slot="slot_ol">
+            <li>321321</li>
+            <li>432432</li>
+            <li>543543</li>
+        </ol>
+    </aaa>
+    <template id="aaa">
+        <slot name="slot_ol"></slot>
+        <slot name="slot_ul"></slot>
+    </template>
+</div>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            data(){
+                return {
+                    a:'aaa'
+                }
+            },
+            components:{
+                'aaa':{
+                    template:'#aaa'
+                },
+                data(){
+                    return {
+                        msg:'我是aaa'
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

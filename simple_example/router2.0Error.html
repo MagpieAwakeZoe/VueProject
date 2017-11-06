@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        .router-link-active{
+            font-size: 20px;
+            color:#f60;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script src="bower_components2.0/vue-router/dist/vue-router.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <router-link to="/home">主页</router-link>
+    <router-link to="/news">新闻</router-link>
+</div>
+
+<div>
+    <router-view></router-view>
+</div>
+<script>
+    var News = {
+        template:`
+        <div>
+        <table>
+        <tr>
+        <td><router-link to="/news/news1">新闻一</router-link></td>
+        <td><router-link to="/news/news2">新闻二</router-link></td>
+        </tr>
+        <tr>
+        <td><router-link to="/news/news3">新闻三</router-link></td>
+        <td><router-link to="/news/news4">新闻四</router-link></td>
+        </tr>
+        </table>
+        <div>
+        <router-view></router-view>
+        </div>
+        </div>
+        `
+    };
+
+    var Home = {
+        template:"<h2>主页</h2>"
+    };
+
+    var News1 = {
+        template:"<p>我是新闻1</p>"
+    };
+
+    var News2 = {
+        template:"<p>我是新闻2</p>"
+    };
+
+    var News3 = {
+        template:"<p>我是新闻3</p>"
+    };
+
+    var News4 = {
+        template:"<p>我是新闻4</p>"
+    };
+
+    const routes =[
+        {
+            path:'/home',
+            component:Home
+        },
+        {
+            path:'/news',
+            component:News,
+            children1:[
+                {
+                    path:'/news/news1',
+                    components:News1
+                }
+            ],
+            children2:[
+                {
+                    path:'/news/news2',
+                    components:News2
+                }
+            ],
+            children3:[
+                {
+                    path:'/news/news3',
+                    components:News3
+                }
+            ],
+            children4:[
+                {
+                    path:'/news/news4',
+                    components:News4
+                }
+            ]
+        },
+        {path:'*', redirect:'/home'}  //404
+    ];
+
+    const router = new VueRouter({
+        routes
+    });
+
+    new Vue({
+        router,
+        el:'#app'
+    })
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

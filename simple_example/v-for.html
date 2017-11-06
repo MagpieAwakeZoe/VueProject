@@ -1,0 +1,29 @@
+<!DOCTYPR html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="age">
+  <ul>
+      <li v-for="todo in todos">
+            {{todo.text}}
+      </li>
+  </ul>
+</div>
+<script>
+    var vue = new Vue({
+        el:"#age",
+        data:{
+            todos:[
+                {text:"123123"},
+                {text:"234234"},
+                {text:"345345"}
+            ]
+        }
+    })
+
+
+</script>
+</body>
